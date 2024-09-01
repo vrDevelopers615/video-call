@@ -22,9 +22,10 @@ showChat.addEventListener("click", () => {
 const user = prompt("Enter your name");
 
 var peer = new Peer({
-  host: '127.0.0.1',
-  port: 3030,
+  host: 'video-call-2zyh.onrender.com',
+  port: 443, // Port 443 is the standard port for HTTPS
   path: '/peerjs',
+  secure: true, // Set to true because you are using HTTPS
   config: {
     'iceServers': [
       { url: 'stun:stun01.sipphone.com' },
@@ -48,9 +49,9 @@ var peer = new Peer({
       }
     ]
   },
-
   debug: 3
 });
+
 
 let myVideoStream;
 navigator.mediaDevices
